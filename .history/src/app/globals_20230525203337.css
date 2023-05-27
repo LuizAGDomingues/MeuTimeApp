@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.landingpage {
+  background-image: url('../assets/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.statisticpage {
+  background-image: url('../assets/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}

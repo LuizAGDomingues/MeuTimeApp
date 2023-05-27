@@ -1,0 +1,40 @@
+import { api } from "@/lib/axios";
+import { useEffect, useState } from "react";
+
+interface TeamShieldsProps {
+  country: string;
+  leagueId: string;
+  season: string
+}
+
+function TeamsShields(props: TeamShieldsProps) {
+  const [teams, setTeams] = useState<{}[]>()
+
+  useEffect(() => {
+    if(props.country != '' && props.leagueId != '' && props.season != '') {
+      api.get('', {
+        params: {
+          league: props.leagueId,
+          season: props.season,
+          country: props.country
+        }
+      },
+      ).then(res => {setTeams(res.data); console.log(teams)})
+    }
+  }, [props])
+
+  return (
+    <div className='grid grid-cols-4 gap-24 mr-40'>
+      <div className='w-[227px] h-[253px] bg-black'></div>
+      <div className='w-[227px] h-[253px] bg-black'></div>
+      <div className='w-[227px] h-[253px] bg-black'></div>
+      <div className='w-[227px] h-[253px] bg-black'></div>
+      <div className='w-[227px] h-[253px] bg-black'></div>
+      <div className='w-[227px] h-[253px] bg-black'></div>
+      <div className='w-[227px] h-[253px] bg-black'></div>
+      <div className='w-[227px] h-[253px] bg-black'></div>
+    </div>
+  )
+}
+
+export default TeamsShields

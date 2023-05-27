@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+main {
+  background-image: url('../assets/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.DialogOverlay {
+  background-color: var(--blackA9);
+  position: fixed;
+  inset: 0;
+  animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes overlayShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
