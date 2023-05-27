@@ -53,7 +53,7 @@ function page() {
     }).then((response) => setPlayers(response.data.response[0].players)).catch(err => setError(true))
   }, [])
 
-  if(timeStatisticsLoading) {
+  if(timeStatisticsLoading || players === undefined) {
     return (
       <section className='statisticpage w-full h-screen flex items-center justify-center px-7 pb-20 text-white'>
         <span>Carregando...</span>
@@ -62,11 +62,7 @@ function page() {
   }
 
   if(players === undefined || timeStatisticsData === undefined) {
-    return (
-      <section className='statisticpage w-full h-screen flex items-center justify-center px-7 pb-20 text-white'>
-        <span>Carregando...</span>
-      </section>
-    )
+    return <section className='statisticpage w-full h-screen flex items-center justify-center px-7 pb-20 text-white'>Carregando...</section>
   }
 
   return (

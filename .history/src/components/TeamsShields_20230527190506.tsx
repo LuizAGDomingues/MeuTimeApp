@@ -39,7 +39,7 @@ function TeamsShields(props: TeamShieldsProps) {
   }
 
   if(teams === undefined) {
-    return <span className="flex items-center justify-center">Não possuimos os times deste campeonato. Tente outro.</span>
+    return 
   }
 
   return (

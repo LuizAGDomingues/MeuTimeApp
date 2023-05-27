@@ -38,10 +38,6 @@ function TeamsShields(props: TeamShieldsProps) {
     return <span className="flex items-center justify-center">Não foi possivel carregar os dados dos times, entre em contato com o suporte.</span>
   }
 
-  if(teams === undefined) {
-    return <span className="flex items-center justify-center">Não possuimos os times deste campeonato. Tente outro.</span>
-  }
-
   return (
     <div className='grid grid-cols-4 gap-24 mr-40'>
       {teams?.map((team: any) => {
