@@ -13,7 +13,7 @@ function page() {
   const league = searchParams.get('league');
   const seasonYear = searchParams.get('seasonYear');
   const team = searchParams.get('team');
-  const [ players, setPlayers ] = useState<{}[]>()
+  const [players, setPlayers] = useState<{}[] | null>(null)
   const [error, setError] = useState(false)
   
   const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
@@ -53,7 +53,7 @@ function page() {
     }).then((response) => setPlayers(response.data.response[0].players)).catch(err => setError(true))
   }, [])
 
-  if(timeStatisticsLoading) {
+  if(timeStatisticsLoading || players === null) {
     return (
       <section className='statisticpage w-full h-screen flex items-center justify-center px-7 pb-20 text-white'>
         <span>Carregando...</span>
@@ -64,7 +64,7 @@ function page() {
   if(players === undefined || timeStatisticsData === undefined) {
     return (
       <section className='statisticpage w-full h-screen flex items-center justify-center px-7 pb-20 text-white'>
-        <span>Carregando...</span>
+        <span>Não possuimos os dados deste time, por favor tente outro!</span>
       </section>
     )
   }
@@ -85,7 +85,7 @@ function page() {
             <Image src={timeStatisticsData.team.logo} alt={'logo do time'} width={56} height={56} />
             <span className='font-semibold'>{timeStatisticsData.team.name}</span>
           </div>
-          <span className='mt-8 ml-24 mb-8'>{timeStatisticsData.lineups[0].formation}</span>
+          <span className='mt-8 ml-24 mb-8'>{timeStatisticsData.lineups}</span>
 
           <table>
             <thead>
