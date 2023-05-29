@@ -15,7 +15,7 @@ const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 const API_HOST = process.env.NEXT_PUBLIC_API_HOST;
 
 function TeamsShields(props: TeamShieldsProps) {
-  const [teams, setTeams] = useState<{}[]>()
+  const [teams, setTeams] = useState<{}[] | null>(null)
   const [error, setError] = useState(false)
 
   useEffect(() => {
