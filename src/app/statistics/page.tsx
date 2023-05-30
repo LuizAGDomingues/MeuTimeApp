@@ -76,7 +76,7 @@ function page() {
         <span className='text-white font-bold text-center'>Meu Time<br/>Descubra tudo sobre seu clube favorito</span>
       </div>
 
-      <div className='flex justify-between'>
+      <div className='md:flex md:justify-between'>
 
         {timeStatisticsError ? <span>Não foi possivel carregar os dados do time, entre em contato com o suporte.</span> 
         : 
@@ -85,7 +85,6 @@ function page() {
             <Image src={timeStatisticsData.team.logo} alt={'logo do time'} width={56} height={56} />
             <span className='font-semibold'>{timeStatisticsData.team.name}</span>
           </div>
-          <span className='mt-8 ml-24 mb-8'>{timeStatisticsData.lineups}</span>
 
           <table>
             <thead>
@@ -100,26 +99,26 @@ function page() {
               <tr>
                 <td>Jogos</td>
                 <td className="pl-8">{timeStatisticsData.fixtures.played.home}</td>
-                <td className="pl-3">{timeStatisticsData.fixtures.played.away}</td>
-                <td className="pl-3">{timeStatisticsData.fixtures.played.total}</td>
+                <td className="pl-4">{timeStatisticsData.fixtures.played.away}</td>
+                <td className="pl-4">{timeStatisticsData.fixtures.played.total}</td>
               </tr>
               <tr>
                 <td>Vitórias</td>
                 <td className="pl-8">{timeStatisticsData.fixtures.wins.home}</td>
-                <td className="pl-3">{timeStatisticsData.fixtures.wins.away}</td>
-                <td className="pl-3">{timeStatisticsData.fixtures.wins.total}</td>
+                <td className="pl-4">{timeStatisticsData.fixtures.wins.away}</td>
+                <td className="pl-4">{timeStatisticsData.fixtures.wins.total}</td>
               </tr>
               <tr>
                 <td>Empates</td>
                 <td className="pl-8">{timeStatisticsData.fixtures.draws.home}</td>
-                <td className="pl-3">{timeStatisticsData.fixtures.draws.away}</td>
-                <td className="pl-3">{timeStatisticsData.fixtures.draws.total}</td>
+                <td className="pl-4">{timeStatisticsData.fixtures.draws.away}</td>
+                <td className="pl-4">{timeStatisticsData.fixtures.draws.total}</td>
               </tr>
               <tr>
                 <td>Derrotas</td>
                 <td className="pl-8">{timeStatisticsData.fixtures.loses.home}</td>
-                <td className="pl-3">{timeStatisticsData.fixtures.loses.away}</td>
-                <td className="pl-3">{timeStatisticsData.fixtures.loses.total}</td>
+                <td className="pl-4">{timeStatisticsData.fixtures.loses.away}</td>
+                <td className="pl-4">{timeStatisticsData.fixtures.loses.total}</td>
               </tr>
 
               <tr>
@@ -128,14 +127,14 @@ function page() {
               <tr>
                 <td>Feitos</td>
                 <td className="pl-8">{timeStatisticsData.goals.for.total.home}</td>
-                <td className="pl-3">{timeStatisticsData.goals.for.total.away}</td>
-                <td className="pl-3">{timeStatisticsData.goals.for.total.total}</td>
+                <td className="pl-4">{timeStatisticsData.goals.for.total.away}</td>
+                <td className="pl-4">{timeStatisticsData.goals.for.total.total}</td>
               </tr>
               <tr>
                 <td>Sofridos</td>
                 <td className="pl-8">{timeStatisticsData.goals.against.total.home}</td>
-                <td className="pl-3">{timeStatisticsData.goals.against.total.away}</td>
-                <td className="pl-3">{timeStatisticsData.goals.against.total.total}</td>
+                <td className="pl-4">{timeStatisticsData.goals.against.total.away}</td>
+                <td className="pl-4">{timeStatisticsData.goals.against.total.total}</td>
               </tr>
 
               <tr>
@@ -144,14 +143,14 @@ function page() {
               <tr>
                 <td>Feitos</td>
                 <td className="pl-8">{timeStatisticsData.goals.for.average.home}</td>
-                <td className="pl-3">{timeStatisticsData.goals.for.average.away}</td>
-                <td className="pl-3">{timeStatisticsData.goals.for.average.total}</td>
+                <td className="pl-4">{timeStatisticsData.goals.for.average.away}</td>
+                <td className="pl-4">{timeStatisticsData.goals.for.average.total}</td>
               </tr>
               <tr>
                 <td>Sofridos</td>
                 <td className="pl-8">{timeStatisticsData.goals.against.average.home}</td>
-                <td className="pl-3">{timeStatisticsData.goals.against.average.away}</td>
-                <td className="pl-3">{timeStatisticsData.goals.against.average.total}</td>
+                <td className="pl-4">{timeStatisticsData.goals.against.average.away}</td>
+                <td className="pl-4">{timeStatisticsData.goals.against.average.total}</td>
               </tr>
             </tbody>
           </table>
@@ -159,7 +158,7 @@ function page() {
 
         {error ? <span className='flex items-center justify-center'>Não foi possivel carregar os dados dos jogadores, entre em contato com o suporte.</span> 
         : 
-        <div className='grid grid-cols-10 gap-4 ml-40'>
+        <div className='grid gap-4 grid-cols-1 mx-auto mt-5 md:mt-0 md:grid-cols-4 md:ml-16 lg:grid-cols-6 lg:ml-24 xl:grid-cols-8 xl:ml-32 2xl:grid-cols-10 2xl:ml-40'>
           {players.map((player: any) => {
             return (
               <div key={player.id} className='flex flex-col items-center gap-3'>
