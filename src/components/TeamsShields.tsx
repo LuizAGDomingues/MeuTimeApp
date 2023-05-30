@@ -43,7 +43,7 @@ function TeamsShields(props: TeamShieldsProps) {
   }
 
   return (
-    <div className='grid grid-cols-4 gap-24 mr-40'>
+    <div className='grid grid-cols-1 mt-10 gap-5 mx-auto md:mt-0 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 md:gap-12 xl:gap-24 xl:mr-40'>
       {teams?.map((team: any) => {
         return (
           <Link href={`/statistics?league=${props.leagueId}&seasonYear=${props.season}&team=${team.team.id}`} key={team.team.id} className="flex flex-col items-center justify-between gap-5">

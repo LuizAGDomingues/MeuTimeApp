@@ -12,8 +12,8 @@ function Header() {
         <Image src={logo} alt='Logo exemplo'/>
         <span className='text-white font-bold text-center'>Meu Time<br/>Descubra tudo sobre seu clube favorito</span>
       </div>
-      <LoginDialog text='Iniciar' className='h-[55px]' />
-      <div className='flex justify-between gap-32 mt-6 h-7'>
+      <LoginDialog text='Iniciar' className='h-[55px] hidden md:block' />
+      <div className='flex justify-between gap-4 xl:gap-32 mt-6 h-7'>
         <NavigationElement href='/' text='Início' />
         <SobreDialog />
         <NavigationElement href='/times' text='Selecione um time para começar!' />
