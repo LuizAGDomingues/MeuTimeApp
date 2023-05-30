@@ -61,15 +61,15 @@ export default function Times() {
 
   return (
     <div className="w-full h-screen overflow-auto pb-20 bg-[#223142] text-white px-7">
-      <div className='flex flex-col items-center w-[308px]'>
+      <div className='flex flex-col items-center max-w-[308px]'>
         <Image src={logo} alt='Logo exemplo'/>
         <span className='text-white font-bold text-center'>Meu Time<br/>Descubra tudo sobre seu clube favorito</span>
       </div>
-      <div className='flex justify-between'>
+      <div className='md:flex md:justify-between'>
         <form action="" className='flex flex-col mt-28'>
 
           <label htmlFor="">Selecione o país</label>
-          <select name="pais" id="pais" onChange={e => setPais(e.target.value)} className='bg-[#D5E2F1] px-3 py-2 rounded-lg w-[308px] mt-1 text-black'>
+          <select name="pais" id="pais" onChange={e => setPais(e.target.value)} className='bg-[#D5E2F1] px-3 py-2 rounded-lg max-w-[308px] mt-1 text-black'>
             <option value=""></option>
             { countriesLoading ? <option value="">Carregando...</option> : 
             countriesData.response.map((paises: { code: string; name: string }) => {
@@ -80,7 +80,7 @@ export default function Times() {
           </select>
 
           <label htmlFor="" className='mt-6'>Selecione a liga</label>
-          <select name="league" id="league" onChange={e => setLeague(e.target.value)} className='bg-[#D5E2F1] px-3 py-2 rounded-lg w-[308px] mt-1 text-black'>
+          <select name="league" id="league" onChange={e => setLeague(e.target.value)} className='bg-[#D5E2F1] px-3 py-2 rounded-lg max-w-[308px] mt-1 text-black'>
             <option value=""></option>
             {leagueList?.map((liga: any) => {
               return (
@@ -90,7 +90,7 @@ export default function Times() {
           </select>
 
           <label htmlFor="" className='mt-6'>Selecione a temporada</label>
-          <select name="season" id="season" onChange={e => setSeason(e.target.value)} className='bg-[#D5E2F1] px-3 py-2 rounded-lg w-[308px] mt-1 text-black'>
+          <select name="season" id="season" onChange={e => setSeason(e.target.value)} className='bg-[#D5E2F1] px-3 py-2 rounded-lg max-w-[308px] mt-1 text-black'>
             <option value=""></option>
             {seasonList?.map((seasons: any) => {
               return (
