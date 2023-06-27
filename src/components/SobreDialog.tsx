@@ -17,7 +17,7 @@ function SobreDialog() {
               <button><XCircle size={34} color='red' /></button>
             </Dialog.Close>
           </div>
-          <Dialog.Description className='mt-6 mb-2'>Este site foi criado para o teste front-end da empresa Trade Technology. Esta é uma aplicação feita em NextJs, utilizando TypeScript, TailwindCss, Axios e outras tecnologias.<br/>Você pode encontrar diversas informações sobre futebol, como ligas, seu time preferido, escalações, saldo de gols, entre outras informações.<br/>Aproveite o site!</Dialog.Description>
+          <Dialog.Description className='mt-6 mb-2'>Com a gente você pode encontrar diversas informações sobre futebol, como ligas, seu time preferido, escalações, saldo de gols, entre outras informações.<br/>Fique por dentro dos campeonatos e acompanhe o seu time do coração<br/>Aproveite o site!</Dialog.Description>
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>
