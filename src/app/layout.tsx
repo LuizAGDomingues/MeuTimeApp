@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <head>
-        <title>Trade test- football application</title>
+        <title>My Team App</title>
         <meta charSet='UTF-8'/>
         <meta name='author' content='Luiz Domingues'/>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
